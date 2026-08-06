@@ -6,6 +6,8 @@ import { Configuracoes } from './pages/configuracoes/configuracoes';
 import { Inicio } from './pages/inicio/inicio';
 import { Login } from './pages/login/login';
 import { RecuperarSenha } from './pages/recuperar-senha/recuperar-senha';
+import { GestaoDeEpis } from './gestao-de-epis/gestao-de-epis';
+
 
 export const routes: Routes = [
   {
@@ -24,6 +26,10 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         component: Inicio
+      },
+        {
+        path: 'gestao-de-epis',
+        component: GestaoDeEpis
       },
       {
         path: 'configuracoes',
