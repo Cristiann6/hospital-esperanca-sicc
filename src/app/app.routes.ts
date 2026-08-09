@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 import { adminGuard } from './core/guards/admin-guard';
 import { authGuard } from './core/guards/auth-guard';
 import { MainLayout } from './core/layout/main-layout/main-layout';
+import { Dashboard } from './features/dashboard/dashboard';
 import { Configuracoes } from './pages/configuracoes/configuracoes';
-import { Inicio } from './pages/inicio/inicio';
 import { Login } from './pages/login/login';
 import { RecuperarSenha } from './pages/recuperar-senha/recuperar-senha';
 
@@ -23,7 +23,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: Inicio
+        component: Dashboard
       },
       {
         path: 'configuracoes',
