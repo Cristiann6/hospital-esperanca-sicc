@@ -40,14 +40,6 @@ export class AuthService {
       senha: 'seg123',
       perfil: 'Técnico de Segurança',
       iniciais: 'CM'
-    },
-    {
-      nome: 'Erick Andrade',
-      email: 'erick@hospitalesperanca.com',
-      matricula: '1004',
-      senha: 'Erick123',
-      perfil: 'Administrador',
-      iniciais: 'EA'
     }
   ];
 
@@ -95,5 +87,13 @@ export class AuthService {
 
   ehAdministrador(): boolean {
     return this.usuarioAtual?.perfil === 'Administrador';
+  }
+
+  ehRH(): boolean {
+    return this.usuarioAtual?.perfil === 'RH';
+  }
+
+  ehTecnicoSeguranca(): boolean {
+    return this.usuarioAtual?.perfil === 'Técnico de Segurança';
   }
 }

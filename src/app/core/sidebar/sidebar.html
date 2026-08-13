@@ -1,6 +1,15 @@
-<aside class="sidebar" [class.sidebar-open]="menuAberto" aria-label="Menu principal do SICC">
+<aside
+  class="sidebar"
+  [class.sidebar-open]="menuAberto"
+  aria-label="Menu principal do SICC"
+>
   <header class="sidebar-header">
-    <a routerLink="/dashboard" class="brand" aria-label="Ir para o Dashboard" (click)="fecharMenu()">
+    <a
+      routerLink="/dashboard"
+      class="brand"
+      aria-label="Ir para o Dashboard"
+      (click)="fecharMenu()"
+    >
       <span class="brand-icon">
         <i class="bi bi-shield-check" aria-hidden="true"></i>
       </span>
@@ -11,7 +20,12 @@
       </span>
     </a>
 
-    <button type="button" class="close-sidebar" aria-label="Fechar menu" (click)="fecharMenu()">
+    <button
+      type="button"
+      class="close-sidebar"
+      aria-label="Fechar menu"
+      (click)="fecharMenu()"
+    >
       <i class="bi bi-x-lg" aria-hidden="true"></i>
     </button>
   </header>
@@ -19,56 +33,98 @@
   <nav class="sidebar-nav" aria-label="Navegação principal">
     <span class="menu-label">Menu principal</span>
 
-    <a routerLink="/dashboard" routerLinkActive="active" class="menu-item" (click)="fecharMenu()">
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      class="menu-item"
+      (click)="fecharMenu()"
+    >
       <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
       <span>Dashboard</span>
     </a>
 
-    <button type="button" class="menu-item disabled-item" disabled aria-label="Colaboradores em desenvolvimento">
-      <i class="bi bi-people-fill" aria-hidden="true"></i>
-      <span>Colaboradores</span>
-      <small class="development-label">Em desenvolvimento</small>
-    </button>
+    @if (podeVerColaboradores()) {
+      <a
+        routerLink="/cadastro"
+        [queryParams]="{ tab: 'colaboradores' }"
+        routerLinkActive="active"
+        class="menu-item"
+        (click)="fecharMenu()"
+      >
+        <i class="bi bi-people-fill" aria-hidden="true"></i>
+        <span>Colaboradores</span>
+      </a>
+    }
 
-    <button type="button" class="menu-item disabled-item" disabled aria-label="EPIs em desenvolvimento">
-      <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
-      <span>EPIs</span>
-      <small class="development-label">Em desenvolvimento</small>
-    </button>
+    @if (podeVerEpis()) {
+      <a
+        routerLink="/cadastro"
+        [queryParams]="{ tab: 'epis' }"
+        routerLinkActive="active"
+        class="menu-item"
+        (click)="fecharMenu()"
+      >
+        <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
+        <span>EPIs</span>
+      </a>
+    }
 
-    <button type="button" class="menu-item disabled-item" disabled aria-label="Gestão de EPIs em desenvolvimento">
+    <button
+      type="button"
+      class="menu-item disabled-item"
+      disabled
+      aria-label="Gestão de EPIs em desenvolvimento"
+    >
       <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
       <span>Gestão de EPIs</span>
       <small class="development-label">Em desenvolvimento</small>
     </button>
 
-    <button type="button" class="menu-item disabled-item" disabled aria-label="Estoque em desenvolvimento">
+    <button
+      type="button"
+      class="menu-item disabled-item"
+      disabled
+      aria-label="Estoque em desenvolvimento"
+    >
       <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
       <span>Estoque</span>
       <small class="development-label">Em desenvolvimento</small>
     </button>
 
-    <a routerLink="/treinamentos" routerLinkActive="active" class="menu-item">
+    <a
+      routerLink="/treinamentos"
+      routerLinkActive="active"
+      class="menu-item"
+      (click)="fecharMenu()"
+    >
       <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
       <span>Treinamentos</span>
     </a>
-    
-    <a routerLink="/relatorio" routerLinkActive="active" class="menu-item">
-      <i class="bi bi-box-seam" aria-hidden="true"></i> <!-- Ícone sugerido para estoque -->
+
+    <a
+      routerLink="/relatorio"
+      routerLinkActive="active"
+      class="menu-item"
+      (click)="fecharMenu()"
+    >
+      <i class="bi bi-bar-chart-fill" aria-hidden="true"></i>
       <span>Relatórios</span>
     </a>
 
-
-
     @if (ehAdministrador()) {
-    <span class="menu-label secondary-label">
-      Administração
-    </span>
+      <span class="menu-label secondary-label">
+        Administração
+      </span>
 
-    <a routerLink="/configuracoes" routerLinkActive="active" class="menu-item" (click)="fecharMenu()">
-      <i class="bi bi-gear-fill" aria-hidden="true"></i>
-      <span>Configurações</span>
-    </a>
+      <a
+        routerLink="/configuracoes"
+        routerLinkActive="active"
+        class="menu-item"
+        (click)="fecharMenu()"
+      >
+        <i class="bi bi-gear-fill" aria-hidden="true"></i>
+        <span>Configurações</span>
+      </a>
     }
   </nav>
 
@@ -85,5 +141,10 @@
 </aside>
 
 @if (menuAberto) {
-<button type="button" class="sidebar-overlay" aria-label="Fechar menu lateral" (click)="fecharMenu()"></button>
+  <button
+    type="button"
+    class="sidebar-overlay"
+    aria-label="Fechar menu lateral"
+    (click)="fecharMenu()"
+  ></button>
 }
