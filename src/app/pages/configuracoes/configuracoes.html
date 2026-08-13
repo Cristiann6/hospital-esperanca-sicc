@@ -5,15 +5,10 @@
 
       <h1>Configurações</h1>
 
-      <p>
-        Gerencie usuários, perfis, permissões e preferências do sistema.
-      </p>
+      <p>Gerencie usuários, perfis, permissões e preferências do sistema.</p>
     </section>
 
-    <button
-      type="button"
-      class="btn btn-primary new-user-button"
-    >
+    <button type="button" class="btn btn-primary new-user-button">
       <i class="bi bi-plus-lg" aria-hidden="true"></i>
       Novo usuário
     </button>
@@ -77,9 +72,7 @@
         </section>
 
         <form class="search-control" role="search">
-          <label for="buscar-usuario" class="visually-hidden">
-            Buscar usuário
-          </label>
+          <label for="buscar-usuario" class="visually-hidden"> Buscar usuário </label>
 
           <i class="bi bi-search" aria-hidden="true"></i>
 
@@ -125,9 +118,7 @@
                     class="profile-badge"
                     [class.admin-profile]="usuario.perfil === 'Administrador'"
                     [class.rh-profile]="usuario.perfil === 'RH'"
-                    [class.safety-profile]="
-                      usuario.perfil === 'Técnico de Segurança'
-                    "
+                    [class.safety-profile]="usuario.perfil === 'Técnico de Segurança'"
                   >
                     {{ usuario.perfil }}
                   </span>
@@ -174,11 +165,7 @@
                   <button
                     type="button"
                     class="status-button"
-                    [attr.aria-label]="
-                      usuario.ativo
-                        ? 'Inativar usuário'
-                        : 'Ativar usuário'
-                    "
+                    [attr.aria-label]="usuario.ativo ? 'Inativar usuário' : 'Ativar usuário'"
                     [title]="usuario.ativo ? 'Inativar' : 'Ativar'"
                     (click)="alternarStatus(usuario)"
                   >
@@ -227,13 +214,8 @@
             <p>{{ perfil.descricao }}</p>
           </header>
 
-          <section
-            class="profile-permissions"
-            aria-label="Permissões do perfil"
-          >
-            <span class="permission-count">
-              {{ perfil.permissoes.length }} permissões
-            </span>
+          <section class="profile-permissions" aria-label="Permissões do perfil">
+            <span class="permission-count"> {{ perfil.permissoes.length }} permissões </span>
 
             <ul>
               @for (permissao of perfil.permissoes; track permissao) {
@@ -264,15 +246,11 @@
         <section>
           <h2>Permissões por perfil</h2>
 
-          <p>
-            Determine quais áreas cada perfil poderá visualizar ou editar.
-          </p>
+          <p>Determine quais áreas cada perfil poderá visualizar ou editar.</p>
         </section>
 
         <section class="profile-select-control">
-          <label for="perfil-permissao" class="form-label">
-            Perfil selecionado
-          </label>
+          <label for="perfil-permissao" class="form-label"> Perfil selecionado </label>
 
           <select
             id="perfil-permissao"
@@ -357,9 +335,7 @@
         <article class="permission-item">
           <section>
             <strong>Estoque</strong>
-            <span>
-              Visualizar quantidades, movimentações e alertas de estoque.
-            </span>
+            <span> Visualizar quantidades, movimentações e alertas de estoque. </span>
           </section>
 
           <label class="form-check form-switch">
@@ -376,9 +352,7 @@
         <article class="permission-item">
           <section>
             <strong>Treinamentos</strong>
-            <span>
-              Visualizar e acompanhar treinamentos e participantes.
-            </span>
+            <span> Visualizar e acompanhar treinamentos e participantes. </span>
           </section>
 
           <label class="form-check form-switch">
