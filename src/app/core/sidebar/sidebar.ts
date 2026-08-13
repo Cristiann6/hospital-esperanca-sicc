@@ -38,4 +38,12 @@ export class Sidebar {
   ehAdministrador(): boolean {
     return this.authService.ehAdministrador();
   }
+
+  podeVerColaboradores(): boolean {
+    return this.authService.ehAdministrador() || this.authService.ehRH();
+  }
+
+  podeVerEpis(): boolean {
+    return this.authService.ehAdministrador() || this.authService.ehTecnicoSeguranca();
+  }
 }
