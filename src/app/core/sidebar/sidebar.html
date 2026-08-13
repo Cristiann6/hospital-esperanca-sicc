@@ -80,16 +80,15 @@
       <small class="development-label">Em desenvolvimento</small>
     </button>
 
-    <button
-      type="button"
-      class="menu-item disabled-item"
-      disabled
-      aria-label="Estoque em desenvolvimento"
+    <a
+      routerLink="/estoque"
+      routerLinkActive="active"
+      class="menu-item"
+      (click)="fecharMenu()"
     >
       <i class="bi bi-box-seam-fill" aria-hidden="true"></i>
       <span>Estoque</span>
-      <small class="development-label">Em desenvolvimento</small>
-    </button>
+    </a>
 
     <a
       routerLink="/treinamentos"

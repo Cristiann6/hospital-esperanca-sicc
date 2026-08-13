@@ -5,6 +5,7 @@ import { MainLayout } from './core/layout/main-layout/main-layout';
 import { Cadastro } from './pages/cadastro/cadastro';
 import { Dashboard } from './features/dashboard/dashboard';
 import { Configuracoes } from './pages/configuracoes/configuracoes';
+import { Estoque } from './pages/estoque/estoque';
 import { Login } from './pages/login/login';
 import { RecuperarSenha } from './pages/recuperar-senha/recuperar-senha';
 import { Relatorio } from './pages/relatorio/relatorio';
@@ -31,6 +32,10 @@ export const routes: Routes = [
       {
         path: 'cadastro',
         component: Cadastro
+      },
+      {
+        path: 'estoque',
+        component: Estoque
       },
       {
         path: 'configuracoes',
