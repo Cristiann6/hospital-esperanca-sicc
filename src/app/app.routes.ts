@@ -8,6 +8,7 @@ import { Configuracoes } from './pages/configuracoes/configuracoes';
 import { Estoque } from './pages/estoque/estoque';
 import { Login } from './pages/login/login';
 import { RecuperarSenha } from './pages/recuperar-senha/recuperar-senha';
+import { GestaoDeEpis } from './gestao-de-epis/gestao-de-epis';
 import { Relatorio } from './pages/relatorio/relatorio';
 import { Treinamentos } from './pages/treinamento/treinamento';
 
@@ -36,6 +37,10 @@ export const routes: Routes = [
       {
         path: 'estoque',
         component: Estoque
+      },
+        {
+        path: 'gestao-de-epis',
+        component: GestaoDeEpis
       },
       {
         path: 'configuracoes',

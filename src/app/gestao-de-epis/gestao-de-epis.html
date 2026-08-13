@@ -1,0 +1,118 @@
+<section class="settings-page">
+  <div class="container">
+    <div class="card">
+      <h1>Registrar Movimentação de EPI</h1>
+      <p class="subtitulo">Registrar entregas, devoluções e trocas de equipamentos de proteção.</p>
+
+      <div class="tipo-movimentacao">
+        <button  class="ativo">Entrega</button>
+        <button>Devolução</button>
+        <button>Troca</button>
+      </div>
+
+      <form>
+        <div class="linha">
+          <div class="campo">
+            <label>Funcionário</label>
+            <input type="text" placeholder="Nome do funcionário" />
+          </div>
+
+          <div class="campo">
+            <label>Matrícula</label>
+            <input type="text" placeholder="Digite a matrícula" />
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label>EPI</label>
+            <select>
+              <option>Selecione um EPI</option>
+              <option>Capacete</option>
+              <option>Luva</option>
+              <option>Botina</option>
+              <option>Óculos de Proteção</option>
+              <option>Protetor Auricular</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label>Quantidade</label>
+            <input type="number" value="1" />
+          </div>
+        </div>
+
+        <div class="linha">
+          <div class="campo">
+            <label>Data</label>
+            <input type="date" />
+          </div>
+
+          <div class="campo">
+            <label>Status</label>
+            <select>
+              <option>Concluído</option>
+              <option>Pendente</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label>Observações</label>
+          <textarea placeholder="Digite alguma observação..."></textarea>
+        </div>
+
+        <div class="botoes">
+          <button type="reset" class="cancelar">Cancelar</button>
+          <button type="submit" class="salvar">Salvar</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card tabela">
+      <h2>Últimas Movimentações</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Funcionário</th>
+            <th>EPI</th>
+            <th>Tipo</th>
+            <th>Qtd.</th>
+            <th>Data</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>João Silva</td>
+            <td>Capacete</td>
+            <td>Entrega</td>
+            <td>1</td>
+            <td>06/08/2026</td>
+            <td>Concluído</td>
+          </tr>
+
+          <tr>
+            <td>Maria Souza</td>
+            <td>Luva</td>
+            <td>Troca</td>
+            <td>2</td>
+            <td>06/08/2026</td>
+            <td>Concluído</td>
+          </tr>
+
+          <tr>
+            <td>Carlos Lima</td>
+            <td>Botina</td>
+            <td>Devolução</td>
+            <td>1</td>
+            <td>05/08/2026</td>
+            <td>Concluído</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
