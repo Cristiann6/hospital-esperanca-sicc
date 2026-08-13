@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { adminGuard } from './core/guards/admin-guard';
 import { authGuard } from './core/guards/auth-guard';
 import { MainLayout } from './core/layout/main-layout/main-layout';
+import { Cadastro } from './pages/cadastro/cadastro';
 import { Dashboard } from './features/dashboard/dashboard';
 import { Configuracoes } from './pages/configuracoes/configuracoes';
 import { Login } from './pages/login/login';
@@ -24,6 +25,10 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         component: Dashboard
+      },
+      {
+        path: 'cadastro',
+        component: Cadastro
       },
       {
         path: 'configuracoes',

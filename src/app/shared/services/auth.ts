@@ -88,4 +88,12 @@ export class AuthService {
   ehAdministrador(): boolean {
     return this.usuarioAtual?.perfil === 'Administrador';
   }
+
+  ehRH(): boolean {
+    return this.usuarioAtual?.perfil === 'RH';
+  }
+
+  ehTecnicoSeguranca(): boolean {
+    return this.usuarioAtual?.perfil === 'Técnico de Segurança';
+  }
 }

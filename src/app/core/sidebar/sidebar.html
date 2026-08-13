@@ -43,27 +43,31 @@
       <span>Dashboard</span>
     </a>
 
-    <button
-      type="button"
-      class="menu-item disabled-item"
-      disabled
-      aria-label="Colaboradores em desenvolvimento"
-    >
-      <i class="bi bi-people-fill" aria-hidden="true"></i>
-      <span>Colaboradores</span>
-      <small class="development-label">Em desenvolvimento</small>
-    </button>
+    @if (podeVerColaboradores()) {
+      <a
+        routerLink="/cadastro"
+        [queryParams]="{ tab: 'colaboradores' }"
+        routerLinkActive="active"
+        class="menu-item"
+        (click)="fecharMenu()"
+      >
+        <i class="bi bi-people-fill" aria-hidden="true"></i>
+        <span>Colaboradores</span>
+      </a>
+    }
 
-    <button
-      type="button"
-      class="menu-item disabled-item"
-      disabled
-      aria-label="EPIs em desenvolvimento"
-    >
-      <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
-      <span>EPIs</span>
-      <small class="development-label">Em desenvolvimento</small>
-    </button>
+    @if (podeVerEpis()) {
+      <a
+        routerLink="/cadastro"
+        [queryParams]="{ tab: 'epis' }"
+        routerLinkActive="active"
+        class="menu-item"
+        (click)="fecharMenu()"
+      >
+        <i class="bi bi-shield-fill-check" aria-hidden="true"></i>
+        <span>EPIs</span>
+      </a>
+    }
 
     <button
       type="button"
