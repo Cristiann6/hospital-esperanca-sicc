@@ -5,7 +5,7 @@
   <section class="d-flex justify-content-between align-items-center mb-4 no-print">
     <h2>Relatórios do Sistema</h2>
     <div class="d-flex gap-2">
-      <button type="button" class="btn btn-primary new-user-button" (click)="imprimir()">
+      <button type="button" class="btn btn-primary new-user-button" (click)="imprimirTabela()">
         <i class="bi bi-printer me-2"></i> Imprimir
       </button>
     </div>
@@ -61,7 +61,6 @@
       </div>
     </div>
   </section>
-  >
 
   <section class="card border-0">
     <div class="card-header">
@@ -89,7 +88,7 @@
           <thead class="table-light">
             <tr>
               <th>Treinamento / Norma</th>
-              <th class=>Data</th>
+              <th class="text">Data</th>
               <th class="text-center">Concluídos</th>
               <th class="text-center">Pendentes</th>
               <th>Situação Geral</th>
@@ -125,6 +124,7 @@
           <thead class="table-light">
             <tr>
               <th>Código</th>
+              <th>Data</th>
               <th>Descrição do Item</th>
               <th class="text-center">Saldo Atual</th>
               <th class="text-center">Estoque Mínimo</th>
@@ -136,6 +136,7 @@
               <td>
                 <code>{{ item.codigo }}</code>
               </td>
+              <td>{{ item.data | date: 'dd/MM/yyyy' }}</td>
               <td>{{ item.item }}</td>
               <td class="text-center fw-bold">{{ item.saldo }}</td>
               <td class="text-center text-muted">{{ item.estoqueMinimo }}</td>
@@ -160,8 +161,9 @@
         <table class="table table-striped align-middle mb-0">
           <thead class="table-light">
             <tr>
-              <th>Data</th>
+              
               <th>Colaborador</th>
+              <th>Data</th>
               <th>Setor</th>
               <th>EPI Entregue</th>
               <th>Motivo</th>
@@ -169,10 +171,10 @@
           </thead>
           <tbody>
             <tr *ngFor="let item of relatorioEntregas">
-              <td>{{ item.data | date: 'dd/MM/yyyy' }}</td>
               <td>
                 <strong>{{ item.colaborador }}</strong>
               </td>
+              <td>{{ item.data | date: 'dd/MM/yyyy' }}</td>
               <td>{{ item.setor }}</td>
               <td>{{ item.epi }}</td>
               <td>{{ item.motivo }}</td>
